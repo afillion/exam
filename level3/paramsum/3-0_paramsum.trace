@@ -1,0 +1,48 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1r12p15.42.fr
+Darwin 15.6.0 x86_64
+$> date
+Mon Apr  3 14:01:05 CEST 2017
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 8.0.0 (clang-800.0.42.1)
+Target: x86_64-apple-darwin15.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 8.0.0 (clang-800.0.42.1)
+Target: x86_64-apple-darwin15.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2017/c-exam-beginner/practice-exam_20170403/afillion
+
+= Git history ==================================================================
+$> git -C /var/folders/3d/50kh77t94n3d7rznz6wq56pr0000gq/T/tmpu3XHlB/user log --pretty='%H - %an, %ad : %s'
+7888ba868c604ba07834432729146d4fdc6b4c15 - Alexis FILLION, Mon Apr 3 14:00:48 2017 +0200 : supp a.out
+a68b865288ed69731b6ae424cf17be7c90e73fd4 - Alexis FILLION, Mon Apr 3 14:00:19 2017 +0200 : first commit
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/3d/50kh77t94n3d7rznz6wq56pr0000gq/T/tmpu3XHlB/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  523 Apr  3 14:01 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Apr  3 14:01 paramsum
+
+/var/folders/3d/50kh77t94n3d7rznz6wq56pr0000gq/T/tmpu3XHlB/user/paramsum:
+total 8
+-rw-r--r--  1 deepthought  deepthought  266 Apr  3 14:01 paramsum.c
+ 
+= paramsum =====================================================================
+$> clang -Wextra -Wall -Werror paramsum.c -o user_exe 
+paramsum.c:21:25: error: unused parameter 'av' [-Werror,-Wunused-parameter]
+int main(int ac, char **av)
+                        ^
+1 error generated.
+
+Could not compile 'user_exe'
+Grade: 0
+
+= Final grade: 0 ===============================================================
