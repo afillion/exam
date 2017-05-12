@@ -1,0 +1,72 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1r3p20.42.fr
+Darwin 15.6.0 x86_64
+$> date
+Mon May  8 13:07:34 CEST 2017
+$> gcc --version
+Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 8.0.0 (clang-800.0.42.1)
+Target: x86_64-apple-darwin15.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+$> clang --version
+Apple LLVM version 8.0.0 (clang-800.0.42.1)
+Target: x86_64-apple-darwin15.6.0
+Thread model: posix
+InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2017/c-exam-beginner/practice-exam_20170508/afillion
+
+= Git history ==================================================================
+$> git -C /var/folders/64/x1js32p92kd0xqnb0hg24sw80000gq/T/tmpNr_IV9/user log --pretty='%H - %an, %ad : %s'
+a9f8e91aa5d0454a6ace57cf937672997d44b76b - Alexis FILLION, Mon May 8 13:07:25 2017 +0200 : sort_list/
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/64/x1js32p92kd0xqnb0hg24sw80000gq/T/tmpNr_IV9/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  236 May  8 13:07 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 May  8 13:07 sort_list
+
+/var/folders/64/x1js32p92kd0xqnb0hg24sw80000gq/T/tmpNr_IV9/user/sort_list:
+total 8
+-rw-r--r--  1 deepthought  deepthought  328 May  8 13:07 sort_list.c
+ 
+= sort_list ====================================================================
+$> clang -Wextra -Wall -Werror sort_list.c main.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./cvf1b1h6igboxyi4a2b1u2h9
+$> diff -U 3 user_output_test1 test1.output | cat -e
+--- user_output_test1	2017-05-08 13:07:36.000000000 +0200$
++++ test1.output	2017-05-08 13:07:36.000000000 +0200$
+@@ -1,12 +1,12 @@$
+ Tri par ordre croissant: 21$
+ Tri par ordre decroissant: 21$
+-Tri par ordre croissant: 42$
+-Tri par ordre decroissant: 21$
+-Tri par ordre croissant: 65021$
+-Tri par ordre decroissant: 438$
+-Tri par ordre croissant: 50435039$
+-Tri par ordre decroissant: -123$
+-Tri par ordre croissant: 84$
+-Tri par ordre decroissant: -2$
+-Tri par ordre croissant: 67$
+-Tri par ordre decroissant: 0$
++Tri par ordre croissant: 21,42$
++Tri par ordre decroissant: 42,21$
++Tri par ordre croissant: 438,4324,5893,65021$
++Tri par ordre decroissant: 65021,5893,4324,438$
++Tri par ordre croissant: -123,54303,435943,4353492,5989724,50435039$
++Tri par ordre decroissant: 50435039,5989724,4353492,435943,54303,-123$
++Tri par ordre croissant: -2,21,42,84$
++Tri par ordre decroissant: 84,42,21,-2$
++Tri par ordre croissant: 0,0,1,2,4,42,59,67$
++Tri par ordre decroissant: 67,59,42,4,2,1,0,0$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================
